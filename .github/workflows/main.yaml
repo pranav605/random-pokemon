@@ -28,3 +28,12 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/random-pokemon:latest
+  redeploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Redeploy Render service
+        uses: qbaware/render-redeploy-action@v0
+        with:
+          render-api-key: ${{ secrets.RENDER_API_KEY }}
+          render-service-id: ${{ secrets.RENDER_SERVICE_ID }}
