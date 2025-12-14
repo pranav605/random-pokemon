@@ -9,12 +9,12 @@ function App() {
 
   return (
     <>
-      <div>
-          <img style={{cursor:'pointer'}} onClick={()=>{setCount((prev)=>{return Math.floor(Math.random() * (data.length - 0 - 1))})}}  src={pokeBall} className="logo react" alt="React logo" />
-      </div>
       <h1>{data[count].name.english}</h1>
       <div className="card">
         <img src={"https://img.pokemondb.net/sprites/brilliant-diamond-shining-pearl/normal/"+data[count].name.english.toLowerCase() + ".png"}></img>
+      </div>
+      <div>
+          <img style={{cursor:'pointer'}} onClick={()=>{setCount((prev)=>{return Math.floor(Math.random() * (data.length - 0 - 1))})}}  src={pokeBall} className="logo react" alt="React logo" />
       </div>
       <p className="read-the-docs">
         Click on the Pokeball to change the pokemon
